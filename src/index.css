@@ -7,10 +7,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-ink-800 font-sans antialiased;
+    @apply bg-cream-50 text-ink-800 font-sans antialiased;
   }
   ::selection {
-    @apply bg-brand-500 text-white;
+    @apply bg-red-600 text-white;
   }
 }
 
@@ -19,24 +19,38 @@
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-600/30 transition-all duration-300 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-600/40 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-energy px-8 py-4 text-base font-bold text-white shadow-xl shadow-red-600/30 transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/40 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-red-600 bg-white px-8 py-4 text-base font-bold text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white hover:-translate-y-0.5;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 bg-white px-7 py-3.5 text-base font-semibold text-ink-700 transition-all duration-300 hover:border-brand-300 hover:text-brand-700 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 bg-white/80 px-7 py-3.5 text-base font-semibold text-ink-700 backdrop-blur transition-all duration-300 hover:border-red-300 hover:text-red-600 hover:-translate-y-0.5;
   }
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700;
+    @apply inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-red-600;
   }
   .section-title {
     @apply font-display text-3xl font-extrabold leading-tight text-ink-900 sm:text-4xl md:text-5xl;
   }
+  .glass-card {
+    @apply rounded-3xl border border-white/40 bg-white/60 backdrop-blur-md;
+  }
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #C3311D 0%, #D35844 50%, #ECC057 100%);
+  }
+  .text-gradient-vino {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #671225 0%, #D35844 100%);
   }
 }

@@ -3,9 +3,8 @@ import Hero from './components/Hero'
 import Problem from './components/Problem'
 import WhatIs from './components/WhatIs'
 import Benefits from './components/Benefits'
-import Routine from './components/Routine'
 import Ingredients from './components/Ingredients'
-import Testimonials from './components/Testimonials'
+import Routine from './components/Routine'
 import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
@@ -20,9 +19,8 @@ export default function App() {
         <Problem />
         <WhatIs />
         <Benefits />
-        <Routine />
         <Ingredients />
-        <Testimonials />
+        <Routine />
         <CTA />
         <FAQ />
       </main>

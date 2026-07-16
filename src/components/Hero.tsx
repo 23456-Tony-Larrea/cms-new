@@ -1,74 +1,103 @@
+import { activities } from '../data/content'
+
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white pt-28 pb-20 sm:pt-36 sm:pb-28">
-      <div className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-brand-200/50 blur-3xl" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-leaf-400/20 blur-3xl" />
+    <section id="top" className="relative overflow-hidden bg-cream-50 pt-28 pb-20 sm:pt-36 sm:pb-32">
+      {/* Background gradient orbs */}
+      <div className="pointer-events-none absolute -right-32 -top-20 h-96 w-96 rounded-full bg-gradient-to-br from-sunrise-300/40 to-amarillo-300/30 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 top-40 h-96 w-96 rounded-full bg-gradient-to-br from-red-200/30 to-terracota-200/30 blur-3xl" />
 
       <div className="container-x relative grid items-center gap-12 lg:grid-cols-2">
+        {/* Left: copy */}
         <div className="animate-fade-up">
           <span className="eyebrow">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-            Fórmula 3-en-1 · Mujeres 40+
+            <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
+            Suplemento alimenticio · Energía diaria
           </span>
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.1] text-ink-900 sm:text-5xl lg:text-6xl">
-            Recupera tu energía, equilibra tus hormonas y acelera tu metabolismo
+          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.08] text-ink-900 sm:text-5xl lg:text-6xl">
+            Activa tu <span className="text-gradient">cuerpo y mente</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-600">
-            Vitacap G reúne <strong className="text-ink-800">Shilajit, Ashwagandha y 16 nutrientes esenciales</strong> en una sola cápsula diaria. Diseñado para mujeres que quieren sentirse jóvenes, fuertes y plenas después de los 40.
+            Vitacap G ayuda a combatir el cansancio físico y mental para que sigas disfrutando cada momento de tu día.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a href="#cta" className="btn-primary">
-              Empezar hoy
+              Inclúyelo en tu rutina
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="#que-es" className="btn-ghost">Conoce la fórmula</a>
+            <a href="#donde" className="btn-ghost">¿Dónde comprar?</a>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-ink-500">
-            <div className="flex items-center gap-2">
-              <span className="text-leaf-600">✓</span> 100% natural
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-leaf-600">✓</span> Sin OMG
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-leaf-600">✓</span> Vegano friendly
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-leaf-600">✓</span> +10.000 mujeres
+          {/* Activities strip */}
+          <div className="mt-10">
+            <p className="text-xs font-bold uppercase tracking-wider text-ink-400">Cuando tienes energía, todo fluye</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              {activities.map((a) => (
+                <span
+                  key={a.label}
+                  className="inline-flex items-center gap-2 rounded-full border border-ink-100 bg-white px-4 py-2 text-sm font-medium text-ink-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-red-200 hover:text-red-600"
+                >
+                  <span className="text-lg">{a.emoji}</span>
+                  {a.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
+        {/* Right: visual with energy halo */}
         <div className="relative animate-fade-in [animation-delay:200ms]">
           <div className="relative mx-auto max-w-md">
-            <div className="absolute inset-0 -rotate-6 rounded-[2.5rem] bg-gradient-to-tr from-brand-500 to-brand-300 opacity-20 blur-xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 shadow-2xl shadow-brand-900/10 backdrop-blur">
+            {/* Energy halo rings */}
+            <div className="absolute inset-0 -z-10 grid place-items-center">
+              <div className="h-80 w-80 animate-halo-pulse rounded-full bg-gradient-to-br from-sunrise-300/50 to-amarillo-300/30 blur-2xl" />
+            </div>
+            <div className="absolute inset-0 -z-10 grid place-items-center">
+              <div className="h-72 w-72 animate-spin-slow rounded-full border-2 border-dashed border-sunrise-300/40" />
+            </div>
+
+            {/* Main image card */}
+            <div className="relative overflow-hidden rounded-[2.5rem] border-4 border-white bg-white shadow-2xl shadow-red-900/15">
               <img
-                src="https://images.pexels.com/photos/3820468/pexels-photo-3820468.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Mujer madura con vitalidad y energía"
-                className="h-[420px] w-full object-cover sm:h-[480px]"
+                src="https://images.pexels.com/photos/3762940/pexels-photo-3762940.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Persona activa llena de energía con Vitacap G"
+                className="h-[440px] w-full object-cover sm:h-[500px]"
                 loading="eager"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-900/70 to-transparent p-6">
-                <p className="text-white/90 text-sm font-medium">
-                  "A los 47 me sentía de 60. Hoy vuelvo a tener energía para todo."
-                </p>
-                <p className="mt-1 text-xs text-white/70">Marta R. · Madrid</p>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-vino-700/30 via-transparent to-sunrise-300/10" />
+
+              {/* Floating product badge */}
+              <div className="absolute right-4 top-4 animate-float rounded-2xl bg-white/90 px-4 py-3 shadow-xl backdrop-blur">
+                <div className="flex items-center gap-2">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-energy text-lg font-extrabold text-white">G</span>
+                  <div>
+                    <p className="text-xs font-bold text-ink-900">Vitacap G</p>
+                    <p className="text-[10px] text-ink-500">Cápsulas · 30 días</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom energy stat */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+                <div className="rounded-2xl bg-white/90 px-4 py-2.5 shadow-xl backdrop-blur">
+                  <p className="text-xs font-semibold text-ink-500">Energía diaria</p>
+                  <p className="text-lg font-extrabold text-gradient">100%</p>
+                </div>
+                <div className="rounded-2xl bg-white/90 px-4 py-2.5 shadow-xl backdrop-blur">
+                  <p className="text-xs font-semibold text-ink-500">Cansancio</p>
+                  <p className="text-lg font-extrabold text-red-600">↓ reducido</p>
+                </div>
               </div>
             </div>
 
-            <div className="absolute -left-6 top-10 hidden animate-float rounded-2xl bg-white px-4 py-3 shadow-xl sm:block">
-              <p className="text-xs font-semibold text-ink-500">Energía</p>
-              <p className="text-lg font-extrabold text-leaf-600">+82%</p>
-            </div>
-            <div className="absolute -right-6 bottom-24 hidden animate-float [animation-delay:1.5s] rounded-2xl bg-white px-4 py-3 shadow-xl sm:block">
-              <p className="text-xs font-semibold text-ink-500">Sofocos</p>
-              <p className="text-lg font-extrabold text-brand-600">-74%</p>
-            </div>
+            {/* Floating particles */}
+            <div className="absolute -left-3 top-20 h-3 w-3 animate-float rounded-full bg-sunrise-400 shadow-lg" />
+            <div className="absolute -right-2 top-32 h-2 w-2 animate-float [animation-delay:1s] rounded-full bg-terracota-400 shadow-lg" />
+            <div className="absolute left-8 -bottom-2 h-2.5 w-2.5 animate-float [animation-delay:2s] rounded-full bg-amarillo-400 shadow-lg" />
           </div>
         </div>
       </div>
